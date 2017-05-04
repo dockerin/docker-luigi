@@ -21,7 +21,20 @@ _____██░░░░░░░░░██
 -_____█████████████
 
 A tool for creating a Luigi docker development and production environment with a single
-scheduler and workers. 
+scheduler and workers.
+```
+## Up and Running (Shortcut)
+```
+//Up and running
+$ docker-compose -f docker-compose.yaml up -d --build
+
+//See the log with tail
+
+$ docker-compose -f docker-compose.yaml logs -f -t
+
+//Down and kill all containers
+
+$ docker-compose -f docker-compose.yaml down
 ```
 
 ## Setup
@@ -137,7 +150,7 @@ eg.
 **NB:** Luigi config files contain a mix between hyphens and underscores in
 their config file. You need to ensure the name of the config key contains
 the proper hyphens or underscores. For example,
-`LUIGI_CORE_DEFAULT-SCHEDULER-URL` contains hyphens in the key whereas 
+`LUIGI_CORE_DEFAULT-SCHEDULER-URL` contains hyphens in the key whereas
 `LUIGI_WORKER_PING_INTERNAL` does not. If you mix them, they will not be
 recognized by the luigi config parser! Always double check the values in the
 [documentation](http://luigi.readthedocs.io/en/stable/configuration.html).
